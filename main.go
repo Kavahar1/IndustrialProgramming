@@ -7,7 +7,6 @@ import (
 	"strings"
 )
 
-// 1. Перевод чисел из одной системы счисления в другую
 func convert_base(numStr string, fromBase int, toBase int) (string, error) {
 	num, err := strconv.ParseInt(numStr, fromBase, 64)
 	if err != nil {
@@ -16,7 +15,6 @@ func convert_base(numStr string, fromBase int, toBase int) (string, error) {
 	return strconv.FormatInt(num, toBase), nil
 }
 
-// 2. Решение квадратного уравнения
 func solve_quadratic(a, b, c float64) (complex128, complex128) {
 	d := b*b - 4*a*c
 	if d > 0 {
@@ -33,7 +31,6 @@ func solve_quadratic(a, b, c float64) (complex128, complex128) {
 	}
 }
 
-// 3. Сортировка чисел по модулю
 func sort_by_absolute(arr []int) []int {
 	sortSlice := make([]int, len(arr))
 	copy(sortSlice, arr)
@@ -54,7 +51,6 @@ func abs(x int) int {
 	return x
 }
 
-// 4. Слияние двух отсортированных массивов
 func merge_sorted_arrays(arr1, arr2 []int) []int {
 	merged := make([]int, 0, len(arr1)+len(arr2))
 	i, j := 0, 0
@@ -72,7 +68,6 @@ func merge_sorted_arrays(arr1, arr2 []int) []int {
 	return merged
 }
 
-// 5. Нахождение подстроки в строке без использования встроенных функций
 func find_substring(haystack, needle string) int {
 	needleLen := len(needle)
 	haystackLen := len(haystack)
@@ -85,9 +80,6 @@ func find_substring(haystack, needle string) int {
 	return -1
 }
 
-// Условия
-
-// 1. Калькулятор с расширенными операциями
 func calculator(a, b float64, operator string) (float64, error) {
 	switch operator {
 	case "+":
@@ -110,7 +102,6 @@ func calculator(a, b float64, operator string) (float64, error) {
 	}
 }
 
-// 2. Проверка палиндрома
 func is_palindrome(s string) bool {
 	s = strings.ToLower(s)
 	s = strings.ReplaceAll(s, " ", "")
@@ -124,7 +115,6 @@ func is_palindrome(s string) bool {
 	return true
 }
 
-// 3. Нахождение пересечения трех отрезков
 func segments_intersection(seg1, seg2, seg3 [2]int) bool {
 	start := max(max(seg1[0], seg2[0]), seg3[0])
 	end := min(min(seg1[1], seg2[1]), seg3[1])
@@ -145,7 +135,6 @@ func min(a, b int) int {
 	return b
 }
 
-// 4. Выбор самого длинного слова в предложении
 func longest_word(sentence string) string {
 	words := strings.Fields(sentence)
 	longest := ""
@@ -158,14 +147,10 @@ func longest_word(sentence string) string {
 	return longest
 }
 
-// 5. Проверка высокосного года
 func is_leap_year(year int) bool {
 	return (year%4 == 0 && year%100 != 0) || (year%400 == 0)
 }
 
-// Циклы
-
-// 1. Числа Фибоначчи до определенного числа
 func fibonacci_up_to(n int) []int {
 	fib := []int{0, 1}
 	for {
@@ -178,7 +163,6 @@ func fibonacci_up_to(n int) []int {
 	return fib
 }
 
-// 2. Определение простых чисел в диапазоне
 func prime_numbers_in_range(start, end int) []int {
 	var primes []int
 	for num := start; num <= end; num++ {
@@ -201,7 +185,6 @@ func is_prime(num int) bool {
 	return true
 }
 
-// 3. Числа Армстронга в заданном диапазоне
 func armstrong_numbers_in_range(start, end int) []int {
 	var armstrongs []int
 	for num := start; num <= end; num++ {
@@ -223,7 +206,6 @@ func is_armstrong(num int) bool {
 	return sum == num
 }
 
-// 4. Реверс строки
 func reverse_string(s string) string {
 	runes := []rune(s)
 	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
@@ -232,7 +214,6 @@ func reverse_string(s string) string {
 	return string(runes)
 }
 
-// 5. Нахождение наибольшего общего делителя (НОД)
 func gcd(a, b int) int {
 	for b != 0 {
 		a, b = b, a%b
@@ -249,28 +230,28 @@ func main() {
 	}
 	root1, root2 := solve_quadratic(1, -3, 2)
 	fmt.Println("Корни квадратного уравнения 1x^2 - 3x + 2:", root1, root2)
-	fmt.Println("Сортировка по модулю:", sort_by_absolute([]int{-3, 1, -2, 4}))
-	fmt.Println("Слияние массивов [1, 3, 5] и [2, 4, 6]:", merge_sorted_arrays([]int{1, 3, 5}, []int{2, 4, 6}))
-	fmt.Println("Нахождение подстроки 'world' в 'Hello world':", find_substring("Hello world", "world"))
+	// fmt.Println("Сортировка по модулю:", sort_by_absolute([]int{-3, 1, -2, 4}))
+	// fmt.Println("Слияние массивов [1, 3, 5] и [2, 4, 6]:", merge_sorted_arrays([]int{1, 3, 5}, []int{2, 4, 6}))
+	// fmt.Println("Нахождение подстроки 'world' в 'Hello world':", find_substring("Hello world", "world"))
 	resultCalc1, err := calculator(10, 2, "/")
 	if err != nil {
-		fmt.Println("Результат калькулятора: ошибка", err)
+		// fmt.Println("Результат калькулятора: ошибка", err)
 	} else {
-		fmt.Println("Результат калькулятора:", resultCalc1)
+		// fmt.Println("Результат калькулятора:", resultCalc1)
 	}
 	resultCalc2, err := calculator(10, 0, "/")
 	if err != nil {
-		fmt.Println("Результат калькулятора: ошибка", err)
+		// fmt.Println("Результат калькулятора: ошибка", err)
 	} else {
-		fmt.Println("Результат калькулятора:", resultCalc2)
+		// fmt.Println("Результат калькулятора:", resultCalc2)
 	}
-	fmt.Println("Проверка палиндрома 'A man, a plan, a canal, Panama':", is_palindrome("A man, a plan, a canal, Panama"))
-	fmt.Println("Пересечение отрезков [1, 5], [2, 6], [3, 4 ]:", segments_intersection([2]int{1, 5}, [2]int{2, 6}, [2]int{3, 4}))
-	fmt.Println("Самое длинное слово в 'Hello, world!':", longest_word("Hello, world!"))
-	fmt.Println("Год 2024 високосный:", is_leap_year(2024))
-	fmt.Println("Числа Фибоначчи до 10:", fibonacci_up_to(10))
-	fmt.Println("Простые числа в диапазоне от 10 до 30:", prime_numbers_in_range(10, 30))
-	fmt.Println("Числа Армстронга в диапазоне от 1 до 1000:", armstrong_numbers_in_range(1, 1000))
-	fmt.Println("Реверс строки 'Hello':", reverse_string("Hello"))
-	fmt.Println("НОД чисел 48 и 18:", gcd(48, 18))
+	// fmt.Println("Проверка палиндрома 'A man, a plan, a canal, Panama':", is_palindrome("A man, a plan, a canal, Panama"))
+	// fmt.Println("Пересечение отрезков [1, 5], [2, 6], [3, 4 ]:", segments_intersection([2]int{1, 5}, [2]int{2, 6}, [2]int{3, 4}))
+	// fmt.Println("Самое длинное слово в 'Hello, world!':", longest_word("Hello, world!"))
+	// fmt.Println("Год 2024 високосный:", is_leap_year(2024))
+	// fmt.Println("Числа Фибоначчи до 10:", fibonacci_up_to(10))
+	// fmt.Println("Простые числа в диапазоне от 10 до 30:", prime_numbers_in_range(10, 30))
+	// fmt.Println("Числа Армстронга в диапазоне от 1 до 1000:", armstrong_numbers_in_range(1, 1000))
+	// fmt.Println("Реверс строки 'Hello':", reverse_string("Hello"))
+	// fmt.Println("НОД чисел 48 и 18:", gcd(48, 18))
 }
